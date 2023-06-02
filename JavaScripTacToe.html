@@ -14,9 +14,35 @@
       header {
         width: 50%;
         margin: 1em auto;
-      }
-      #board {
+        /* overflow: hidden; */
+        /* background-color: #f1f1f1; */
+        /* padding: 20px 10px; */
+        /* min-width: 25rem;
         max-width: 50%;
+        margin: 0px auto; */
+        /* justify-content: baseline; */
+        /* display: flex; */
+        /* flex-direction: column; */
+      }
+      /* header .header-left {
+        font-size: 15px;
+        font-weight: bold;
+        flex-direction: column;
+        display: inline;
+        float: left;
+      }
+      header #header-right {
+        min-width: 25rem;
+        max-width: 50%;
+        margin: 1em auto;
+        font-size: 20px;
+        font-weight: bold;
+        flex-direction: column;
+        display: inline;
+        float: right;
+      } */
+      #board {
+        width: 50%;
         margin: 1em auto;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
@@ -27,9 +53,9 @@
       #start {
         color: green;
         font-size: 35px;
-        padding-top: 10px;
         text-align: center;
         cursor: pointer;
+        background: fixed;
       }
       #players {
         color: teal;
@@ -46,6 +72,7 @@
         font-family: monospace;
         color: black;
         cursor: pointer;
+        border: none;
       }
       .square:hover {
         background-color: lightskyblue;
@@ -54,30 +81,42 @@
   </head>
   <body>
     <header>
-      <h1>Tic Tac Toe</h1>
-      <h2>A game you know</h2>
-      <h2 id="start" onclick="startGame()">Start the Game</h2>
+      <div>
+        <h1>Tic Tac Toe</h1>
+        <h2>A game you know</h2>
+      </div>
 
+      <!-- <form action="" id="header-right">
+        <label for="playerX_Name">Player X Name:</label>
+        <input type="text" name="playerX_Name" id="playerX_Name" value="playerX_Name" /><br />
+
+        <label for="playerO_Name">Player O Name:</label>
+        <input type="text" name="playerO_Name" id="playerO_Name" value="playerO_Name" />
+
+        <input type="submit" value="submit" />
+      </form> -->
+
+      <h2 id="start" onclick="startGame()">Start the Game</h2>
       <div id="players">
-        <h2 id="p1" class="player" onclick="player1()">
-          Player <span id="p1-symbol"></span>: <span id="p1-name"></span>
+        <h2 id="p1" class="player" onclick="playerX()">
+          Player <span id="p1-symbol">X</span>: <span id="p1-name"></span>
         </h2>
-        <h2 id="p2" class="player" onclick="player2()">
-          Player <span id="p2-symbol"></span>: <span id="p2-name"></span>
+        <h2 id="p2" class="player" onclick="playerO()">
+          Player <span id="p2-symbol">O</span>: <span id="p2-name"></span>
         </h2>
       </div>
     </header>
 
     <div id="board">
-      <div id="square1" class="square" onclick="square1()"></div>
-      <div id="square2" class="square" onclick="square2()"></div>
-      <div id="square3" class="square" onclick="square3()"></div>
-      <div id="square4" class="square" onclick="square4()"></div>
-      <div id="square5" class="square" onclick="square5()"></div>
-      <div id="square6" class="square" onclick="square6()"></div>
-      <div id="square7" class="square" onclick="square7()"></div>
-      <div id="square8" class="square" onclick="square8()"></div>
-      <div id="square9" class="square" onclick="square9()"></div>
+      <button id="square1" class="square"></button>
+      <button id="square2" class="square"></button>
+      <button id="square3" class="square"></button>
+      <button id="square4" class="square"></button>
+      <button id="square5" class="square"></button>
+      <button id="square6" class="square"></button>
+      <button id="square7" class="square"></button>
+      <button id="square8" class="square"></button>
+      <button id="square9" class="square"></button>
     </div>
 
     <script src="script.js"></script>
