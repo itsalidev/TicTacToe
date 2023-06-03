@@ -100,14 +100,14 @@ function square1() {
     sq1.textContent = playerX_Symbol.textContent;
     disableElement(sq1);
     userEntries[0][0] = playerX_Symbol.textContent;
-    // winner();
+    winner();
     isDraw();
     turn();
   } else {
     sq1.textContent = playerO_Symbol.textContent;
     disableElement(sq1);
     userEntries[0][0] = playerO_Symbol.textContent;
-    // winner();
+    winner();
     isDraw();
     turn();
   }
@@ -120,14 +120,14 @@ function square2() {
     sq2.textContent = playerX_Symbol.textContent;
     disableElement(sq2);
     userEntries[0][1] = playerX_Symbol.textContent;
-    // winner();
+    winner();
     isDraw();
     turn();
   } else {
     sq2.textContent = playerO_Symbol.textContent;
     disableElement(sq2);
     userEntries[0][1] = playerO_Symbol.textContent;
-    // winner();
+    winner();
     isDraw();
     turn();
   }
@@ -140,14 +140,14 @@ function square3() {
     sq3.textContent = playerX_Symbol.textContent;
     disableElement(sq3);
     userEntries[0][2] = playerX_Symbol.textContent;
-    // winner();
+    winner();
     isDraw();
     turn();
   } else {
     sq3.textContent = playerO_Symbol.textContent;
     disableElement(sq3);
     userEntries[0][2] = playerO_Symbol.textContent;
-    // winner();
+    winner();
     isDraw();
     turn();
   }
@@ -160,14 +160,14 @@ function square4() {
     sq4.textContent = playerX_Symbol.textContent;
     disableElement(sq4);
     userEntries[1][0] = playerX_Symbol.textContent;
-    // winner();
+    winner();
     isDraw();
     turn();
   } else {
     sq4.textContent = playerO_Symbol.textContent;
     disableElement(sq4);
     userEntries[1][0] = playerO_Symbol.textContent;
-    // winner();
+    winner();
     isDraw();
     turn();
   }
@@ -180,14 +180,14 @@ function square5() {
     sq5.textContent = playerX_Symbol.textContent;
     disableElement(sq5);
     userEntries[1][1] = playerX_Symbol.textContent;
-    // winner();
+    winner();
     isDraw();
     turn();
   } else {
     sq5.textContent = playerO_Symbol.textContent;
     disableElement(sq5);
     userEntries[1][1] = playerO_Symbol.textContent;
-    // winner();
+    winner();
     isDraw();
     turn();
   }
@@ -200,14 +200,14 @@ function square6() {
     sq6.textContent = playerX_Symbol.textContent;
     disableElement(sq6);
     userEntries[1][2] = playerX_Symbol.textContent;
-    // winner();
+    winner();
     isDraw();
     turn();
   } else {
     sq6.textContent = playerO_Symbol.textContent;
     disableElement(sq6);
     userEntries[1][2] = playerO_Symbol.textContent;
-    // winner();
+    winner();
     isDraw();
     turn();
   }
@@ -220,14 +220,14 @@ function square7() {
     sq7.textContent = playerX_Symbol.textContent;
     disableElement(sq7);
     userEntries[2][0] = playerX_Symbol.textContent;
-    // winner();
+    winner();
     isDraw();
     turn();
   } else {
     sq7.textContent = playerO_Symbol.textContent;
     disableElement(sq7);
     userEntries[2][0] = playerO_Symbol.textContent;
-    // winner();
+    winner();
     isDraw();
     turn();
   }
@@ -240,14 +240,14 @@ function square8() {
     sq8.textContent = playerX_Symbol.textContent;
     disableElement(sq8);
     userEntries[2][1] = playerX_Symbol.textContent;
-    // winner();
+    winner();
     isDraw();
     turn();
   } else {
     sq8.textContent = playerO_Symbol.textContent;
     disableElement(sq8);
     userEntries[2][1] = playerO_Symbol.textContent;
-    // winner();
+    winner();
     isDraw();
     turn();
   }
@@ -260,14 +260,14 @@ function square9() {
     sq9.textContent = playerX_Symbol.textContent;
     disableElement(sq9);
     userEntries[2][2] = playerX_Symbol.textContent;
-    // winner();
+    winner();
     isDraw();
     turn();
   } else {
     sq9.textContent = playerO_Symbol.textContent;
     disableElement(sq9);
     userEntries[2][2] = playerO_Symbol.textContent;
-    // winner();
+    winner();
     isDraw();
     turn();
   }
@@ -423,9 +423,10 @@ function isDraw() {
   }
   if (winner()) {
     return false;
+  } else {
+    console.log("Its a draw");
+    return true;
   }
-  console.log("Its a draw");
-  return true;
 }
 
 function disableElement(el) {
