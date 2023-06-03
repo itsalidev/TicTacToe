@@ -63,7 +63,9 @@ function startGame() {
 function playerX() {
   playerX_Name.textContent = prompt("Enter Player X's Name");
   while (!playerX_Name.textContent) {
-    playerX_Name.textContent = prompt("Invalid Name: Enter Player X's Name");
+    playerX_Name.textContent = prompt(
+      "Invalid Name: Please Enter Player X's Name"
+    );
   }
   enableAllSquares();
   playerO();
@@ -73,7 +75,9 @@ function playerX() {
 function playerO() {
   playerO_Name.textContent = prompt("Enter Player O's Name");
   while (!playerO_Name.textContent) {
-    playerO_Name.textContent = prompt("Invalid Name: Enter Player 0's Name");
+    playerO_Name.textContent = prompt(
+      "Invalid Name: Please Enter Player O's Name"
+    );
   }
   enableAllSquares();
 }
@@ -92,18 +96,19 @@ function turn() {
  * functionality of square 1
  */
 function square1() {
-  console.log("square 1 clicked");
   if (flag === playerX_Symbol.textContent) {
     sq1.textContent = playerX_Symbol.textContent;
     disableElement(sq1);
     userEntries[0][0] = playerX_Symbol.textContent;
-    winner();
+    // winner();
+    isDraw();
     turn();
   } else {
     sq1.textContent = playerO_Symbol.textContent;
     disableElement(sq1);
     userEntries[0][0] = playerO_Symbol.textContent;
-    winner();
+    // winner();
+    isDraw();
     turn();
   }
 }
@@ -111,18 +116,19 @@ function square1() {
  * functionality of square 2
  */
 function square2() {
-  console.log("square 2 clicked");
   if (flag === playerX_Symbol.textContent) {
     sq2.textContent = playerX_Symbol.textContent;
     disableElement(sq2);
     userEntries[0][1] = playerX_Symbol.textContent;
-    winner();
+    // winner();
+    isDraw();
     turn();
   } else {
     sq2.textContent = playerO_Symbol.textContent;
     disableElement(sq2);
     userEntries[0][1] = playerO_Symbol.textContent;
-    winner();
+    // winner();
+    isDraw();
     turn();
   }
 }
@@ -130,18 +136,19 @@ function square2() {
  * functionality of square 3
  */
 function square3() {
-  console.log("square 3 clicked");
   if (flag === playerX_Symbol.textContent) {
     sq3.textContent = playerX_Symbol.textContent;
     disableElement(sq3);
     userEntries[0][2] = playerX_Symbol.textContent;
-    winner();
+    // winner();
+    isDraw();
     turn();
   } else {
     sq3.textContent = playerO_Symbol.textContent;
     disableElement(sq3);
     userEntries[0][2] = playerO_Symbol.textContent;
-    winner();
+    // winner();
+    isDraw();
     turn();
   }
 }
@@ -149,18 +156,19 @@ function square3() {
  * functionality of square 4
  */
 function square4() {
-  console.log("square 4 clicked");
   if (flag === playerX_Symbol.textContent) {
     sq4.textContent = playerX_Symbol.textContent;
     disableElement(sq4);
     userEntries[1][0] = playerX_Symbol.textContent;
-    winner();
+    // winner();
+    isDraw();
     turn();
   } else {
     sq4.textContent = playerO_Symbol.textContent;
     disableElement(sq4);
     userEntries[1][0] = playerO_Symbol.textContent;
-    winner();
+    // winner();
+    isDraw();
     turn();
   }
 }
@@ -168,18 +176,19 @@ function square4() {
  * functionality of square 5
  */
 function square5() {
-  console.log("square 5 clicked");
   if (flag === playerX_Symbol.textContent) {
     sq5.textContent = playerX_Symbol.textContent;
     disableElement(sq5);
     userEntries[1][1] = playerX_Symbol.textContent;
-    winner();
+    // winner();
+    isDraw();
     turn();
   } else {
     sq5.textContent = playerO_Symbol.textContent;
     disableElement(sq5);
     userEntries[1][1] = playerO_Symbol.textContent;
-    winner();
+    // winner();
+    isDraw();
     turn();
   }
 }
@@ -187,18 +196,19 @@ function square5() {
  * functionality of square 6
  */
 function square6() {
-  console.log("square 6 clicked");
   if (flag === playerX_Symbol.textContent) {
     sq6.textContent = playerX_Symbol.textContent;
     disableElement(sq6);
     userEntries[1][2] = playerX_Symbol.textContent;
-    winner();
+    // winner();
+    isDraw();
     turn();
   } else {
     sq6.textContent = playerO_Symbol.textContent;
     disableElement(sq6);
     userEntries[1][2] = playerO_Symbol.textContent;
-    winner();
+    // winner();
+    isDraw();
     turn();
   }
 }
@@ -206,18 +216,19 @@ function square6() {
  * functionality of square 7
  */
 function square7() {
-  console.log("square 7 clicked");
   if (flag === playerX_Symbol.textContent) {
     sq7.textContent = playerX_Symbol.textContent;
     disableElement(sq7);
     userEntries[2][0] = playerX_Symbol.textContent;
-    winner();
+    // winner();
+    isDraw();
     turn();
   } else {
     sq7.textContent = playerO_Symbol.textContent;
     disableElement(sq7);
     userEntries[2][0] = playerO_Symbol.textContent;
-    winner();
+    // winner();
+    isDraw();
     turn();
   }
 }
@@ -225,18 +236,19 @@ function square7() {
  * functionality of square 8
  */
 function square8() {
-  console.log("square 8 clicked");
   if (flag === playerX_Symbol.textContent) {
     sq8.textContent = playerX_Symbol.textContent;
     disableElement(sq8);
     userEntries[2][1] = playerX_Symbol.textContent;
-    winner();
+    // winner();
+    isDraw();
     turn();
   } else {
     sq8.textContent = playerO_Symbol.textContent;
     disableElement(sq8);
     userEntries[2][1] = playerO_Symbol.textContent;
-    winner();
+    // winner();
+    isDraw();
     turn();
   }
 }
@@ -244,18 +256,19 @@ function square8() {
  * functionality of square 9
  */
 function square9() {
-  console.log("square 9 clicked");
   if (flag === playerX_Symbol.textContent) {
     sq9.textContent = playerX_Symbol.textContent;
     disableElement(sq9);
     userEntries[2][2] = playerX_Symbol.textContent;
-    winner();
+    // winner();
+    isDraw();
     turn();
   } else {
     sq9.textContent = playerO_Symbol.textContent;
     disableElement(sq9);
     userEntries[2][2] = playerO_Symbol.textContent;
-    winner();
+    // winner();
+    isDraw();
     turn();
   }
 }
@@ -267,11 +280,11 @@ function square9() {
 function winner() {
   if (flag === playerX_Symbol.textContent) {
     if (
-      userEntries[0][1] === flag &&
       userEntries[0][0] === flag &&
+      userEntries[0][1] === flag &&
       userEntries[0][2] === flag
     ) {
-      console.log("Ali wins");
+      console.log("Player X", playerX_Name.textContent, "won");
       disableAllSquares();
       return true;
     } else if (
@@ -279,7 +292,7 @@ function winner() {
       userEntries[1][1] === flag &&
       userEntries[1][2] === flag
     ) {
-      console.log("Ali wins");
+      console.log("Player X", playerX_Name.textContent, "won");
       disableAllSquares();
       return true;
     } else if (
@@ -287,7 +300,7 @@ function winner() {
       userEntries[2][1] === flag &&
       userEntries[2][2] === flag
     ) {
-      console.log("Ali wins");
+      console.log("Player X", playerX_Name.textContent, "won");
       disableAllSquares();
       return true;
     } else if (
@@ -295,7 +308,7 @@ function winner() {
       userEntries[1][0] === flag &&
       userEntries[2][0] === flag
     ) {
-      console.log("Ali wins");
+      console.log("Player X", playerX_Name.textContent, "won");
       disableAllSquares();
       return true;
     } else if (
@@ -303,15 +316,7 @@ function winner() {
       userEntries[1][1] === flag &&
       userEntries[2][1] === flag
     ) {
-      console.log("Ali wins");
-      disableAllSquares();
-      return true;
-    } else if (
-      userEntries[0][1] === flag &&
-      userEntries[1][1] === flag &&
-      userEntries[2][1] === flag
-    ) {
-      console.log("Ali wins");
+      console.log("Player X", playerX_Name.textContent, "won");
       disableAllSquares();
       return true;
     } else if (
@@ -319,7 +324,7 @@ function winner() {
       userEntries[1][2] === flag &&
       userEntries[2][2] === flag
     ) {
-      console.log("Ali wins");
+      console.log("Player X", playerX_Name.textContent, "won");
       disableAllSquares();
       return true;
     } else if (
@@ -327,25 +332,25 @@ function winner() {
       userEntries[1][1] === flag &&
       userEntries[2][2] === flag
     ) {
-      console.log("Ali wins");
+      console.log("Player X", playerX_Name.textContent, "won");
       disableAllSquares();
       return true;
     } else if (
       userEntries[0][2] === flag &&
-      userEntries[2][1] === flag &&
+      userEntries[1][1] === flag &&
       userEntries[2][0] === flag
     ) {
-      console.log("Ali wins");
+      console.log("Player X", playerX_Name.textContent, "won");
       disableAllSquares();
       return true;
     }
   } else if (flag === playerO_Symbol.textContent) {
     if (
-      userEntries[0][1] === flag &&
       userEntries[0][0] === flag &&
+      userEntries[0][1] === flag &&
       userEntries[0][2] === flag
     ) {
-      console.log("Nomi wins");
+      console.log("Player O", playerO_Name.textContent, "won");
       disableAllSquares();
       return true;
     } else if (
@@ -353,7 +358,7 @@ function winner() {
       userEntries[1][1] === flag &&
       userEntries[1][2] === flag
     ) {
-      console.log("Nomi wins");
+      console.log("Player O", playerO_Name.textContent, "won");
       disableAllSquares();
       return true;
     } else if (
@@ -361,7 +366,7 @@ function winner() {
       userEntries[2][1] === flag &&
       userEntries[2][2] === flag
     ) {
-      console.log("Nomi wins");
+      console.log("Player O", playerO_Name.textContent, "won");
       disableAllSquares();
       return true;
     } else if (
@@ -369,7 +374,7 @@ function winner() {
       userEntries[1][0] === flag &&
       userEntries[2][0] === flag
     ) {
-      console.log("Nomi wins");
+      console.log("Player O", playerO_Name.textContent, "won");
       disableAllSquares();
       return true;
     } else if (
@@ -377,15 +382,7 @@ function winner() {
       userEntries[1][1] === flag &&
       userEntries[2][1] === flag
     ) {
-      console.log("Nomi wins");
-      disableAllSquares();
-      return true;
-    } else if (
-      userEntries[0][1] === flag &&
-      userEntries[1][1] === flag &&
-      userEntries[2][1] === flag
-    ) {
-      console.log("Nomi wins");
+      console.log("Player O", playerO_Name.textContent, "won");
       disableAllSquares();
       return true;
     } else if (
@@ -393,7 +390,7 @@ function winner() {
       userEntries[1][2] === flag &&
       userEntries[2][2] === flag
     ) {
-      console.log("Nomi wins");
+      console.log("Player O", playerO_Name.textContent, "won");
       disableAllSquares();
       return true;
     } else if (
@@ -401,20 +398,34 @@ function winner() {
       userEntries[1][1] === flag &&
       userEntries[2][2] === flag
     ) {
-      console.log("Nomi wins");
+      console.log("Player O", playerO_Name.textContent, "won");
       disableAllSquares();
       return true;
     } else if (
-      userEntries[2][1] === flag &&
       userEntries[0][2] === flag &&
+      userEntries[1][1] === flag &&
       userEntries[2][0] === flag
     ) {
-      console.log("Nomi wins");
+      console.log("Player O", playerO_Name.textContent, "won");
       disableAllSquares();
       return true;
     }
-  } else {
   }
+}
+
+function isDraw() {
+  for (let i = 0; i < userEntries.length; i++) {
+    for (let j = 0; j < userEntries[i].length; j++) {
+      if (userEntries[i][j] === "") {
+        return false;
+      }
+    }
+  }
+  if (winner()) {
+    return false;
+  }
+  console.log("Its a draw");
+  return true;
 }
 
 function disableElement(el) {
