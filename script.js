@@ -107,291 +107,171 @@ function turn() {
  * functionality of square 1
  */
 function square1() {
-  if (flag === playerX_Symbol.textContent) {
-    sq1.textContent = playerX_Symbol.textContent;
-    disableElement(sq1);
-    userEntries[0][0] = playerX_Symbol.textContent;
-    winner();
-    isDraw();
-    turn();
-  } else {
-    sq1.textContent = playerO_Symbol.textContent;
-    disableElement(sq1);
-    userEntries[0][0] = playerO_Symbol.textContent;
-    winner();
-    isDraw();
-    turn();
-  }
+  sq1.textContent = flag;
+  userEntries[0][0] = flag;
+  disableElement(sq1);
+  checkWinner();
+  turn();
 }
 /**
  * functionality of square 2
  */
 function square2() {
-  if (flag === playerX_Symbol.textContent) {
-    sq2.textContent = playerX_Symbol.textContent;
-    disableElement(sq2);
-    userEntries[0][1] = playerX_Symbol.textContent;
-    winner();
-    isDraw();
-    turn();
-  } else {
-    sq2.textContent = playerO_Symbol.textContent;
-    disableElement(sq2);
-    userEntries[0][1] = playerO_Symbol.textContent;
-    winner();
-    isDraw();
-    turn();
-  }
+  sq2.textContent = flag;
+  userEntries[0][1] = flag;
+  disableElement(sq2);
+  checkWinner();
+  turn();
 }
 /**
  * functionality of square 3
  */
 function square3() {
-  if (flag === playerX_Symbol.textContent) {
-    sq3.textContent = playerX_Symbol.textContent;
-    disableElement(sq3);
-    userEntries[0][2] = playerX_Symbol.textContent;
-    winner();
-    isDraw();
-    turn();
-  } else {
-    sq3.textContent = playerO_Symbol.textContent;
-    disableElement(sq3);
-    userEntries[0][2] = playerO_Symbol.textContent;
-    winner();
-    isDraw();
-    turn();
-  }
+  sq3.textContent = flag;
+  userEntries[0][2] = flag;
+  disableElement(sq3);
+  checkWinner();
+  turn();
 }
 /**
  * functionality of square 4
  */
 function square4() {
-  if (flag === playerX_Symbol.textContent) {
-    sq4.textContent = playerX_Symbol.textContent;
-    disableElement(sq4);
-    userEntries[1][0] = playerX_Symbol.textContent;
-    winner();
-    isDraw();
-    turn();
-  } else {
-    sq4.textContent = playerO_Symbol.textContent;
-    disableElement(sq4);
-    userEntries[1][0] = playerO_Symbol.textContent;
-    winner();
-    isDraw();
-    turn();
-  }
+  sq4.textContent = flag;
+  userEntries[1][0] = flag;
+  disableElement(sq4);
+  checkWinner();
+  turn();
 }
 /**
  * functionality of square 5
  */
 function square5() {
-  if (flag === playerX_Symbol.textContent) {
-    sq5.textContent = playerX_Symbol.textContent;
-    disableElement(sq5);
-    userEntries[1][1] = playerX_Symbol.textContent;
-    winner();
-    isDraw();
-    turn();
-  } else {
-    sq5.textContent = playerO_Symbol.textContent;
-    disableElement(sq5);
-    userEntries[1][1] = playerO_Symbol.textContent;
-    winner();
-    isDraw();
-    turn();
-  }
+  sq5.textContent = flag;
+  userEntries[1][1] = flag;
+  disableElement(sq5);
+  checkWinner();
+  turn();
 }
 /**
  * functionality of square 6
  */
 function square6() {
-  if (flag === playerX_Symbol.textContent) {
-    sq6.textContent = playerX_Symbol.textContent;
-    disableElement(sq6);
-    userEntries[1][2] = playerX_Symbol.textContent;
-    winner();
-    isDraw();
-    turn();
-  } else {
-    sq6.textContent = playerO_Symbol.textContent;
-    disableElement(sq6);
-    userEntries[1][2] = playerO_Symbol.textContent;
-    winner();
-    isDraw();
-    turn();
-  }
+  sq6.textContent = flag;
+  userEntries[1][2] = flag;
+  disableElement(sq6);
+  checkWinner();
+  turn();
 }
 /**
  * functionality of square 7
  */
 function square7() {
-  if (flag === playerX_Symbol.textContent) {
-    sq7.textContent = playerX_Symbol.textContent;
-    disableElement(sq7);
-    userEntries[2][0] = playerX_Symbol.textContent;
-    winner();
-    isDraw();
-    turn();
-  } else {
-    sq7.textContent = playerO_Symbol.textContent;
-    disableElement(sq7);
-    userEntries[2][0] = playerO_Symbol.textContent;
-    winner();
-    isDraw();
-    turn();
-  }
+  sq7.textContent = flag;
+  userEntries[2][0] = flag;
+  disableElement(sq7);
+  checkWinner();
+  turn();
 }
 /**
  * functionality of square 8
  */
 function square8() {
-  if (flag === playerX_Symbol.textContent) {
-    sq8.textContent = playerX_Symbol.textContent;
-    disableElement(sq8);
-    userEntries[2][1] = playerX_Symbol.textContent;
-    winner();
-    isDraw();
-    turn();
-  } else {
-    sq8.textContent = playerO_Symbol.textContent;
-    disableElement(sq8);
-    userEntries[2][1] = playerO_Symbol.textContent;
-    winner();
-    isDraw();
-    turn();
-  }
+  sq8.textContent = flag;
+  userEntries[2][1] = flag;
+  disableElement(sq8);
+  checkWinner();
+  turn();
 }
 /**
  * functionality of square 9
  */
 function square9() {
-  if (flag === playerX_Symbol.textContent) {
-    sq9.textContent = playerX_Symbol.textContent;
-    disableElement(sq9);
-    userEntries[2][2] = playerX_Symbol.textContent;
-    winner();
-    isDraw();
-    turn();
-  } else {
-    sq9.textContent = playerO_Symbol.textContent;
-    disableElement(sq9);
-    userEntries[2][2] = playerO_Symbol.textContent;
-    winner();
-    isDraw();
-    turn();
+  sq9.textContent = flag;
+  userEntries[2][2] = flag;
+  disableElement(sq9);
+  checkWinner();
+  turn();
+}
+
+function threeStringsAreEqual(a, b, c) {
+  if (!a || !b || !c) {
+    return false;
   }
+  return a === b && b === c;
 }
 
 /**
  * winner function when a player wins
  */
 
-let playerHasWon = false;
+let isWinnerFound = false;
 
-function winner() {
-  let isWinnerFound = false;
-  if (flag === playerX_Symbol.textContent) {
-    if (
-      userEntries[0][0] === flag &&
-      userEntries[0][1] === flag &&
-      userEntries[0][2] === flag
-    ) {
-      isWinnerFound = true;
-    } else if (
-      userEntries[1][0] === flag &&
-      userEntries[1][1] === flag &&
-      userEntries[1][2] === flag
-    ) {
-      isWinnerFound = true;
-    } else if (
-      userEntries[2][0] === flag &&
-      userEntries[2][1] === flag &&
-      userEntries[2][2] === flag
-    ) {
-      isWinnerFound = true;
-    } else if (
-      userEntries[0][0] === flag &&
-      userEntries[1][0] === flag &&
-      userEntries[2][0] === flag
-    ) {
-      isWinnerFound = true;
-    } else if (
-      userEntries[0][1] === flag &&
-      userEntries[1][1] === flag &&
-      userEntries[2][1] === flag
-    ) {
-      isWinnerFound = true;
-    } else if (
-      userEntries[0][2] === flag &&
-      userEntries[1][2] === flag &&
-      userEntries[2][2] === flag
-    ) {
-      isWinnerFound = true;
-    } else if (
-      userEntries[0][0] === flag &&
-      userEntries[1][1] === flag &&
-      userEntries[2][2] === flag
-    ) {
-      isWinnerFound = true;
-    } else if (
-      userEntries[0][2] === flag &&
-      userEntries[1][1] === flag &&
-      userEntries[2][0] === flag
-    ) {
-      isWinnerFound = true;
-    }
-  } else if (flag === playerO_Symbol.textContent) {
-    if (
-      userEntries[0][0] === flag &&
-      userEntries[0][1] === flag &&
-      userEntries[0][2] === flag
-    ) {
-      isWinnerFound = true;
-    } else if (
-      userEntries[1][0] === flag &&
-      userEntries[1][1] === flag &&
-      userEntries[1][2] === flag
-    ) {
-      isWinnerFound = true;
-    } else if (
-      userEntries[2][0] === flag &&
-      userEntries[2][1] === flag &&
-      userEntries[2][2] === flag
-    ) {
-      isWinnerFound = true;
-    } else if (
-      userEntries[0][0] === flag &&
-      userEntries[1][0] === flag &&
-      userEntries[2][0] === flag
-    ) {
-      isWinnerFound = true;
-    } else if (
-      userEntries[0][1] === flag &&
-      userEntries[1][1] === flag &&
-      userEntries[2][1] === flag
-    ) {
-      isWinnerFound = true;
-    } else if (
-      userEntries[0][2] === flag &&
-      userEntries[1][2] === flag &&
-      userEntries[2][2] === flag
-    ) {
-      isWinnerFound = true;
-    } else if (
-      userEntries[0][0] === flag &&
-      userEntries[1][1] === flag &&
-      userEntries[2][2] === flag
-    ) {
-      isWinnerFound = true;
-    } else if (
-      userEntries[0][2] === flag &&
-      userEntries[1][1] === flag &&
-      userEntries[2][0] === flag
-    ) {
-      isWinnerFound = true;
-    }
+function checkWinner() {
+  if (
+    threeStringsAreEqual(
+      userEntries[0][0],
+      userEntries[0][1],
+      userEntries[0][2]
+    )
+  ) {
+    isWinnerFound = true;
+  } else if (
+    threeStringsAreEqual(
+      userEntries[1][0],
+      userEntries[1][1],
+      userEntries[1][2]
+    )
+  ) {
+    isWinnerFound = true;
+  } else if (
+    threeStringsAreEqual(
+      userEntries[2][0],
+      userEntries[2][1],
+      userEntries[2][2]
+    )
+  ) {
+    isWinnerFound = true;
+  } else if (
+    threeStringsAreEqual(
+      userEntries[0][0],
+      userEntries[1][0],
+      userEntries[2][0]
+    )
+  ) {
+    isWinnerFound = true;
+  } else if (
+    threeStringsAreEqual(
+      userEntries[0][1],
+      userEntries[1][1],
+      userEntries[2][1]
+    )
+  ) {
+    isWinnerFound = true;
+  } else if (
+    threeStringsAreEqual(
+      userEntries[0][2],
+      userEntries[1][2],
+      userEntries[2][2]
+    )
+  ) {
+    isWinnerFound = true;
+  } else if (
+    threeStringsAreEqual(
+      userEntries[0][0],
+      userEntries[1][1],
+      userEntries[2][2]
+    )
+  ) {
+    isWinnerFound = true;
+  } else if (
+    threeStringsAreEqual(
+      userEntries[0][2],
+      userEntries[1][1],
+      userEntries[2][0]
+    )
+  ) {
+    isWinnerFound = true;
   }
   if (isWinnerFound) {
     if (flag === playerX_Symbol.textContent) {
@@ -407,14 +287,22 @@ function winner() {
         );
       });
     }
-    playerHasWon = true;
     disableAllSquares();
     return true;
+  } else {
+    if (isAllSquaresFilled()) {
+      setTimeout(() => {
+        alert("Game drawn!");
+      });
+      disableAllSquares();
+      return true;
+    }
   }
+
   return false;
 }
 
-function isDraw() {
+function isAllSquaresFilled() {
   for (let i = 0; i < userEntries.length; i++) {
     for (let j = 0; j < userEntries[i].length; j++) {
       if (userEntries[i][j] === "") {
@@ -422,14 +310,8 @@ function isDraw() {
       }
     }
   }
-  if (!playerHasWon && !winner()) {
-    setTimeout(() => {
-      alert("Game drawn!");
-    });
-    disableAllSquares();
-    return true;
-  }
-  return false;
+
+  return true;
 }
 
 function disableElement(el) {
