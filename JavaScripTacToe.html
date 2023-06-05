@@ -52,10 +52,18 @@
       }
       #start {
         color: green;
-        font-size: 35px;
-        text-align: center;
+        font-size: 40px;
+        font-weight: bold;
+        width: 100%;
+        padding: 10px;
+        display: flex;
+        justify-content: center;
         cursor: pointer;
         background: fixed;
+        border: none;
+      }
+      #start:disabled {
+        cursor: default;
       }
       #players {
         color: teal;
@@ -74,7 +82,10 @@
         cursor: pointer;
         border: none;
       }
-      .square:hover {
+      .square:disabled {
+        cursor: default;
+      }
+      .square:hover:not(:disabled) {
         background-color: lightskyblue;
       }
     </style>
@@ -96,7 +107,7 @@
         <input type="submit" value="submit" />
       </form> -->
 
-      <h2 id="start" onclick="startGame()">Start the Game</h2>
+      <button id="start">Start the Game</button>
       <div id="players">
         <h2 id="p1" class="player" onclick="playerX()">
           Player <span id="p1-symbol">X</span>: <span id="p1-name"></span>

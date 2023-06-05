@@ -1,5 +1,7 @@
 /**
- * 1. alert to start the game
+ * 1. Press "Start the Game click handler" and the it shows alert to start the game
+ * 2. invoked player X form startGame function and then after player X runs and on
+ *    the end of that function, invoked next player which is player O
  * 2. click to player text and
  * 3. alert to enter name
  * 4. alert to enter symbol
@@ -31,12 +33,10 @@ let sq9 = document.getElementById("square9");
 
 disableAllSquares();
 
-// playerX_Name.textContent=
+// added event listener to Start the Game button
+start.addEventListener("click", startGame);
 
-/**
- * add event listeners to all 9 square buttons
- */
-
+// added event listeners to all 9 square buttons
 sq1.addEventListener("click", square1);
 sq2.addEventListener("click", square2);
 sq3.addEventListener("click", square3);
@@ -47,7 +47,7 @@ sq7.addEventListener("click", square7);
 sq8.addEventListener("click", square8);
 sq9.addEventListener("click", square9);
 
-let flag = playerX_Symbol.textContent;
+let flag = null;
 
 let userEntries = [
   ["", "", ""],
@@ -55,8 +55,10 @@ let userEntries = [
   ["", "", ""],
 ];
 
+// function to start the game
 function startGame() {
   alert("Play the Game!");
+  disableElement(start);
   playerX();
 }
 
@@ -69,7 +71,7 @@ function playerX() {
   }
   enableAllSquares();
   playerO();
-  alert("Player X has the first turn");
+  turn();
 }
 
 function playerO() {
@@ -86,10 +88,19 @@ function playerO() {
  * Player X to Player O and Player O to Player X
  */
 function turn() {
-  if (flag === playerX_Symbol.textContent) {
-    flag = playerO_Symbol.textContent;
+  if (flag === null) {
+    // Randomly choose the first player
+    flag =
+      Math.random() < 0.5
+        ? playerX_Symbol.textContent
+        : playerO_Symbol.textContent;
+    alert(`Player ${flag} has the first turn`);
   } else {
-    flag = playerX_Symbol.textContent;
+    // Toggle between players for subsequent turns
+    flag =
+      flag === playerX_Symbol.textContent
+        ? playerO_Symbol.textContent
+        : playerX_Symbol.textContent;
   }
 }
 /**
@@ -277,72 +288,59 @@ function square9() {
  * winner function when a player wins
  */
 
+let playerHasWon = false;
+
 function winner() {
+  let isWinnerFound = false;
   if (flag === playerX_Symbol.textContent) {
     if (
       userEntries[0][0] === flag &&
       userEntries[0][1] === flag &&
       userEntries[0][2] === flag
     ) {
-      console.log("Player X", playerX_Name.textContent, "won");
-      disableAllSquares();
-      return true;
+      isWinnerFound = true;
     } else if (
       userEntries[1][0] === flag &&
       userEntries[1][1] === flag &&
       userEntries[1][2] === flag
     ) {
-      console.log("Player X", playerX_Name.textContent, "won");
-      disableAllSquares();
-      return true;
+      isWinnerFound = true;
     } else if (
       userEntries[2][0] === flag &&
       userEntries[2][1] === flag &&
       userEntries[2][2] === flag
     ) {
-      console.log("Player X", playerX_Name.textContent, "won");
-      disableAllSquares();
-      return true;
+      isWinnerFound = true;
     } else if (
       userEntries[0][0] === flag &&
       userEntries[1][0] === flag &&
       userEntries[2][0] === flag
     ) {
-      console.log("Player X", playerX_Name.textContent, "won");
-      disableAllSquares();
-      return true;
+      isWinnerFound = true;
     } else if (
       userEntries[0][1] === flag &&
       userEntries[1][1] === flag &&
       userEntries[2][1] === flag
     ) {
-      console.log("Player X", playerX_Name.textContent, "won");
-      disableAllSquares();
-      return true;
+      isWinnerFound = true;
     } else if (
       userEntries[0][2] === flag &&
       userEntries[1][2] === flag &&
       userEntries[2][2] === flag
     ) {
-      console.log("Player X", playerX_Name.textContent, "won");
-      disableAllSquares();
-      return true;
+      isWinnerFound = true;
     } else if (
       userEntries[0][0] === flag &&
       userEntries[1][1] === flag &&
       userEntries[2][2] === flag
     ) {
-      console.log("Player X", playerX_Name.textContent, "won");
-      disableAllSquares();
-      return true;
+      isWinnerFound = true;
     } else if (
       userEntries[0][2] === flag &&
       userEntries[1][1] === flag &&
       userEntries[2][0] === flag
     ) {
-      console.log("Player X", playerX_Name.textContent, "won");
-      disableAllSquares();
-      return true;
+      isWinnerFound = true;
     }
   } else if (flag === playerO_Symbol.textContent) {
     if (
@@ -350,67 +348,70 @@ function winner() {
       userEntries[0][1] === flag &&
       userEntries[0][2] === flag
     ) {
-      console.log("Player O", playerO_Name.textContent, "won");
-      disableAllSquares();
-      return true;
+      isWinnerFound = true;
     } else if (
       userEntries[1][0] === flag &&
       userEntries[1][1] === flag &&
       userEntries[1][2] === flag
     ) {
-      console.log("Player O", playerO_Name.textContent, "won");
-      disableAllSquares();
-      return true;
+      isWinnerFound = true;
     } else if (
       userEntries[2][0] === flag &&
       userEntries[2][1] === flag &&
       userEntries[2][2] === flag
     ) {
-      console.log("Player O", playerO_Name.textContent, "won");
-      disableAllSquares();
-      return true;
+      isWinnerFound = true;
     } else if (
       userEntries[0][0] === flag &&
       userEntries[1][0] === flag &&
       userEntries[2][0] === flag
     ) {
-      console.log("Player O", playerO_Name.textContent, "won");
-      disableAllSquares();
-      return true;
+      isWinnerFound = true;
     } else if (
       userEntries[0][1] === flag &&
       userEntries[1][1] === flag &&
       userEntries[2][1] === flag
     ) {
-      console.log("Player O", playerO_Name.textContent, "won");
-      disableAllSquares();
-      return true;
+      isWinnerFound = true;
     } else if (
       userEntries[0][2] === flag &&
       userEntries[1][2] === flag &&
       userEntries[2][2] === flag
     ) {
-      console.log("Player O", playerO_Name.textContent, "won");
-      disableAllSquares();
-      return true;
+      isWinnerFound = true;
     } else if (
       userEntries[0][0] === flag &&
       userEntries[1][1] === flag &&
       userEntries[2][2] === flag
     ) {
-      console.log("Player O", playerO_Name.textContent, "won");
-      disableAllSquares();
-      return true;
+      isWinnerFound = true;
     } else if (
       userEntries[0][2] === flag &&
       userEntries[1][1] === flag &&
       userEntries[2][0] === flag
     ) {
-      console.log("Player O", playerO_Name.textContent, "won");
-      disableAllSquares();
-      return true;
+      isWinnerFound = true;
     }
   }
+  if (isWinnerFound) {
+    if (flag === playerX_Symbol.textContent) {
+      setTimeout(() => {
+        alert(
+          `Player ${playerX_Symbol.textContent}: ${playerX_Name.textContent} won`
+        );
+      });
+    } else if (flag === playerO_Symbol.textContent) {
+      setTimeout(() => {
+        alert(
+          `Player ${playerO_Symbol.textContent}: ${playerO_Name.textContent} won`
+        );
+      });
+    }
+    playerHasWon = true;
+    disableAllSquares();
+    return true;
+  }
+  return false;
 }
 
 function isDraw() {
@@ -421,12 +422,14 @@ function isDraw() {
       }
     }
   }
-  if (winner()) {
-    return false;
-  } else {
-    console.log("Its a draw");
+  if (!playerHasWon && !winner()) {
+    setTimeout(() => {
+      alert("Game drawn!");
+    });
+    disableAllSquares();
     return true;
   }
+  return false;
 }
 
 function disableElement(el) {
