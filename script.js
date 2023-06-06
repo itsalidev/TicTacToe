@@ -112,7 +112,7 @@ function square1() {
   sq1.textContent = flag;
   userEntries[0][0] = flag;
   disableElement(sq1);
-  winner();
+  checkWinner();
   turn();
 }
 /**
@@ -122,7 +122,7 @@ function square2() {
   sq2.textContent = flag;
   userEntries[0][1] = flag;
   disableElement(sq2);
-  winner();
+  checkWinner();
   turn();
 }
 /**
@@ -132,7 +132,7 @@ function square3() {
   sq3.textContent = flag;
   userEntries[0][2] = flag;
   disableElement(sq3);
-  winner();
+  checkWinner();
   turn();
 }
 /**
@@ -142,7 +142,7 @@ function square4() {
   sq4.textContent = flag;
   userEntries[1][0] = flag;
   disableElement(sq4);
-  winner();
+  checkWinner();
   turn();
 }
 /**
@@ -152,7 +152,7 @@ function square5() {
   sq5.textContent = flag;
   userEntries[1][1] = flag;
   disableElement(sq5);
-  winner();
+  checkWinner();
   turn();
 }
 /**
@@ -162,7 +162,7 @@ function square6() {
   sq6.textContent = flag;
   userEntries[1][2] = flag;
   disableElement(sq6);
-  winner();
+  checkWinner();
   turn();
 }
 /**
@@ -172,7 +172,7 @@ function square7() {
   sq7.textContent = flag;
   userEntries[2][0] = flag;
   disableElement(sq7);
-  winner();
+  checkWinner();
   turn();
 }
 /**
@@ -182,7 +182,7 @@ function square8() {
   sq8.textContent = flag;
   userEntries[2][1] = flag;
   disableElement(sq8);
-  winner();
+  checkWinner();
   turn();
 }
 /**
@@ -192,13 +192,9 @@ function square9() {
   sq9.textContent = flag;
   userEntries[2][2] = flag;
   disableElement(sq9);
-  winner();
+  checkWinner();
   turn();
 }
-
-/**
- * winner function when a player wins
- */
 
 function matchThreeStrings(str1, str2, str3) {
   if (str1 !== "" && str1 !== "" && str1 !== "") {
@@ -208,9 +204,11 @@ function matchThreeStrings(str1, str2, str3) {
   }
   return false;
 }
-
+/**
+ * checkWinner function when a player wins
+ */
 let isWinnerFound = false;
-function winner() {
+function checkWinner() {
   if (
     matchThreeStrings(userEntries[0][0], userEntries[0][1], userEntries[0][2])
   ) {
